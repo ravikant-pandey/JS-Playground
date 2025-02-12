@@ -1,4 +1,4 @@
-const a = 90;
-const b = 45;
+const number1 = 90;
+const number2 = 45;
 
-console.log(a+b);
+console.log(number1+number2);
