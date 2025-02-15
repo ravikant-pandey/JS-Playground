@@ -37,7 +37,16 @@ const result = addTwoNumber(45, 45);
 
 
 //  Shortest ++++++++++++
-function userLogInMsg(userName) {
+// function userLogInMsg(userName) {
+//     if (!userName) {
+//         return "Invalid input\nPlease enter your username!";
+//     }
+//     return `${userName} just logged in..`;
+// }
+
+
+// never excecute if condition
+function userLogInMsg(userName="Raj") {
     if (!userName) {
         return "Invalid input\nPlease enter your username!";
     }
@@ -45,4 +54,4 @@ function userLogInMsg(userName) {
 }
 
 // Testing the function
-console.log(userLogInMsg("Rahul")); // Rahul just logged in..
+console.log(userLogInMsg()); // Raj just logged in..
