@@ -32,7 +32,7 @@ let val1;
 val1 = null ?? undefined ?? 10 ?? 25;
 console.log(val1);
 
-// Terniary operator
+// Ternary operator
 
 // condition ? true statement : false statement
 
