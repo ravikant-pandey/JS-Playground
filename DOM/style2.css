@@ -1,0 +1,9 @@
+body {
+  color: whitesmoke;
+  background-color: #212121;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.parent:hover {
+  font-size: 20px;
+}
