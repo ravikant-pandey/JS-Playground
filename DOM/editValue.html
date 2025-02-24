@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit and Remove Value with help of JS</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <ul class="lang">
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>Node.js</li>
+      <li>HTML</li>
+      <li>CSS</li>
+    </ul>
+    <script>
+      // Edit
+      const firstLang = document.querySelector("li:nth-child(1)");
+      console.log(firstLang);
+      // firstLang.innerHTML = "Hello" // Slow
+      // Optimize
+      const newLi = document.createElement('li');
+      console.log(newLi);
+      newLi.textContent = "Hello"
+      firstLang.replaceWith(newLi);
+
+      // One Exapme more
+      const secLang = document.querySelector('li:nth-child(2)');
+      const nLi = document.createElement('li');
+      nLi.textContent = "Pandey";
+      secLang.replaceWith(nLi);
+
+      // Remove
+
+      const firstChild = document.querySelector('li:first-Child');
+      console.log(firstChild.remove());
+    </script>
+  </body>
+</html>

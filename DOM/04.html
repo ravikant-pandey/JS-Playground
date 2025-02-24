@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+  </head>
+  <body style="background-color: #212121; color: wheat">
+    <ul class="lang">
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>Node.js</li>
+      <li>HTML</li>
+      <li>CSS</li>
+    </ul>
+    <script>
+      // Fucntion
+      // Its is very slow method it is tarves in tree starting to end every time
+      // he method using document.querySelector('.lang').append(li); traverses the DOM tree every time the function is called, which can be inefficient, especially when dealing with large lists.
+      // const addLang = (langName) => {
+      //   const li = document.createElement("li");
+      //   li.innerHTML = `${langName}`
+      //   document.querySelector('.lang').appendChild(li);
+      // };
+      const addOptimalLang = (langName) => {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName)); // Correctly appends text node
+        document.querySelector(".lang").appendChild(li); // Selects the `.lang` list and appends the `li`
+      };
+
+      addOptimalLang(['Java']);
+    </script>
+  </body>
+</html>
