@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Digital Clock</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 195px;
+        font-size: 2em;
+        font-weight: bold;
+      }
+      h1:hover {
+        color: red;
+        cursor: pointer;
+      }
+      .center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      #banner {
+        color: #333;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 4em;
+        font-weight: bold;
+        width: fit-content;
+      }
+
+      #local {
+        font-size: 10em;
+        font-weight: bold;
+        color: #333;
+      }
+      #date {
+        font-size: 2em;
+        color: #333;
+      }
+      #date:hover {
+        color: red;
+        cursor: pointer;
+      }
+      #local:hover {
+        color: blue;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Digital Clock</h1>
+    <div class="center">
+      <div id="banner"><span>Your local time.</span></div>
+      <div id="local"></div>
+      <div id="date"></div>
+    </div>
+    <script>
+      const clock = document.getElementById("local");
+      // const clock = document.querySelector('#local');
+      const cal = document.querySelector("#date");
+      setInterval(() => {
+        let date = new Date();
+        clock.innerHTML = date.toLocaleTimeString("en-US", { hour12: true });
+        cal.innerHTML = date.toLocaleDateString("en-IN", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+      }, 1000);
+    </script>
+  </body>
+</html>
