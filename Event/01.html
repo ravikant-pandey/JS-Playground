@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event in JS</title>
+</head>
+<style>
+    li {
+        list-style: none;
+        margin: 20px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    img {
+        border: 3px solid black;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: whitesmoke;
+        background-color: #ff4d00;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+</style>
+
+<body style="background-color: #212121; color: whitesmoke;">
+    <header>
+        <h1>4k Amazing Photos</h1>
+    </header>
+    <main>
+        <ul id="images">
+            <li><img id="img1"
+                    src="https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    width="300px"></li>
+            <li><img id="img2" width="300px"
+                    src="https://images.pexels.com/photos/1525041/pexels-photo-1525041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+            </li>
+            <li><img id="img3" width="300px"
+                    src="https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+            </li>
+            <li><img id="img4" width="300px"
+                    src="https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+            </li>
+            <li><img id="img5" width="300px"
+                    src="https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg?auto=compress&cs=tinysrgb&w=600">
+            </li>
+            <li><a target="_blank" id="google" href="https://www.google.com">Google.com</a></li>
+        </ul>
+    </main>
+    <script>
+        // document.getElementById('img1').onclick = (function () {
+        //     alert("Image 1 Clicked")
+        // })
+        // Optimize
+        // const img2 = document.getElementById('img2');
+        // img2.addEventListener('mouseover', (evt) => {
+        //     alert("Image 1 Mouse Over")
+        //     console.log(evt);
+        // })
+        // const img3 = document.getElementById("img3")
+        // document.addEventListener("click", () => {
+        //     let time = new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true });
+        //     console.log(`Clicked time is: ${time}`);
+        // }, false);
+
+        // False And True
+        const images = document.getElementById("images");
+        images.addEventListener('click', (evt) => {
+            console.log("Click inside the UL.");
+        }, false);
+
+        const image1 = document.getElementById("img1");
+        image1.addEventListener('click', (evt) => {
+            console.log("Click inside the Image 1.");
+            evt.stopPropagation() // to stop the bubbling means alg alg execution
+        }, false);
+        // const images = document.getElementById("images");
+        // images.addEventListener('click', (evt) => {
+        //     console.log("Click inside the UL.");
+        // }, true);
+
+        // const image1 = document.getElementById("img1");
+        // image1.addEventListener('click', (evt) => {
+        //     console.log("Click inside the Image 1.");
+        //     evt.stopPropagation() // to stop the bubbling means alg alg execution
+        // }, true);
+
+        const stopLink = document.getElementById('google')
+        stopLink.addEventListener('click',(evt)=>
+    {
+        evt.preventDefault();
+        evt.stopPropagation();
+        console.log("Google was Clcked.")
+    },false)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click and the image will disappear</title>
+    <style>
+        li {
+            list-style: none;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        img {
+            border: 3px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+            background-color: #ff4d00;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Click and the image will disappear</h1>
+        <ul id="images">
+            <li><img id="img1"
+                    src="https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    width="300px"></li>
+            <li><img id="img2" width="300px"
+                    src="https://images.pexels.com/photos/1525041/pexels-photo-1525041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+            </li>
+            <li><img id="img3" width="300px"
+                    src="https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+            </li>
+            <li><img id="img4" width="300px"
+                    src="https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+            </li>
+            <li><img id="img5" width="300px"
+                    src="https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg?auto=compress&cs=tinysrgb&w=600">
+            </li>
+            <li><a target="_blank" id="google" href="https://www.google.com">Google.com</a></li>
+        </ul>
+    </main>
+    <script>
+        const images = document.querySelector('#images')
+
+        document.getElementById('images').addEventListener('click', (evt) => {
+            if (evt.target.tagName === 'IMG') {
+                let removeIt = evt.target.parentNode; // Remove the parent container of the image
+                // removeIt.remove();
+                removeIt.parentNode.removeChild(removeIt);
+                console.log(evt.target.tagName);
+                console.log(evt.target.id);
+            }
+            else
+            {
+                console.log(evt.target.id);
+                console.log("This is not a Image");
+            }
+        }, false);
+    </script>
+</body>
+
+</html>
