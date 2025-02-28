@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            background-color: #212121;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="msg">Hello, welcome to JavaScript!</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        const start = document.querySelector("#start");
+        const stop = document.querySelector("#stop");
+
+        let intervalId;
+
+        start.addEventListener("click", () => {
+            intervalId = setInterval(() => {
+                const today = new Date();
+                console.log("Hello", today.toLocaleTimeString());
+            }, 1000);
+        });
+
+        stop.addEventListener("click", () => {
+            clearInterval(intervalId); // Interval रोकना
+            console.log("Stopped....");
+            intervalId = null; // Reset करना
+        });
+    </script>
+
+</body>
+
+</html>

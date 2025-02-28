@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #stop {
+            background-color: red;
+            color: white;
+            height: 30px;
+            width: 150px;
+            font-size: 1rem;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="heading">Async with 2 Project</h1>
+    <button id="stop">Stop</button>
+    <script>
+        const greeting = () => {
+            console.log("Hello Universe")
+        }
+        setTimeout(greeting, 3000)
+        setTimeout(() => {
+            console.log("How are you?")
+        }, 5000)
+
+        // Change text
+        const changeText = () => {
+            document.querySelector('#heading').innerHTML = "Hello EveryOne"
+
+        }
+        const timeOut = setTimeout(changeText, 3000)
+        // clearTimeout(timeOut)
+        document.querySelector("#stop").addEventListener('click',(evt)=>
+    {
+        clearTimeout(timeOut);
+        console.log("Stopped...")
+    })
+    </script>
+</body>
+
+</html>
