@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Time</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Click Anywhere to See the Time</h2>
+    <p id="clickTime">Click Time: -</p>
+    <script>
+        document.addEventListener("click", () => {
+            let time = new Date().toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true });
+            document.getElementById("clickTime").innerText = "Click Time: " + time;
+        });
+
+
+    </script>
+</body>
+
+</html>

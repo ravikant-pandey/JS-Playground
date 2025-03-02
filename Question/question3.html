@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Size</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Click Anywhere to See Window Size</h2>
+    <p id="windowSize">Window Size: -</p>
+    <script>
+        document.addEventListener("click", () => {
+            document.getElementById("windowSize").innerText = `Window Size: Width: ${window.innerWidth}, Height: ${window.innerHeight}`;
+        });
+
+    </script>
+</body>
+
+</html>

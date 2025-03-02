@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Create Circles</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            background: lightgray;
+            position: relative;
+            margin: auto;
+            border: 2px solid black;
+        }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Click Inside the Box to Create a Circle</h2>
+    <div id="box"></div>
+    <script>
+        document.getElementById("box").addEventListener("click", (event) => {
+            let circle = document.createElement("div");
+            circle.classList.add("circle");
+            circle.style.left = `${event.offsetX - 10}px`;
+            circle.style.top = `${event.offsetY - 10}px`;
+            event.target.appendChild(circle);
+        });
+
+    </script>
+</body>
+
+</html>

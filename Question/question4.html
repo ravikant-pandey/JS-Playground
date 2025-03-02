@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Position</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Click Anywhere to See Mouse Position</h2>
+    <p id="mousePosition">Mouse Position: -</p>
+    <script>
+        document.addEventListener("click", (event) => {
+            document.getElementById("mousePosition").innerText = `Mouse Position: X: ${event.clientX}, Y: ${event.clientY}`;
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicked View</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Click Anywhere to See Which Element Was Clicked</h2>
+    <p id="clickedView">Clicked View: -</p>
+    <script>
+        document.addEventListener("click", (event) => {
+            document.getElementById("clickedView").innerText = `Clicked View: ${event.target.tagName}`;
+        });
+
+    </script>
+</body>
+
+</html>
